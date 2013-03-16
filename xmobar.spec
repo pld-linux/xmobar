@@ -1,3 +1,10 @@
+# Conditional build:
+%bcond_without	alsa		# don't use alsa
+%bcond_without	datezone	# don't use datezone
+%bcond_without	dbus		# don't use dbus
+%bcond_without	inotify		# don't use inotify
+%bcond_without	xft		# don't use xft
+#
 Summary:	Minimalistic, text based, status bar
 Name:		xmobar
 Version:	0.16
@@ -8,11 +15,19 @@ Source0:	http://hackage.haskell.org/packages/archive/%{name}/%{version}/%{name}-
 # Source0-md5:	4742f1556a8e9b292f18df1176dcd378
 URL:		http://projects.haskell.org/xmobar/
 BuildRequires:	ghc >= 6.12.3
+%{?with_alsa:BuildRequires:	ghc-alsa-core >= 0.5}
+%{?with_alsa:BuildRequires:	ghc-alsa-mixer >= 0.1}
+%{?with_dbus:BuildRequires:	ghc-dbus >= 0.10}
+%{?with_inotify:BuildRequires:	ghc-hinotify >= 0.3}
+%{?with_mpd:BuildRequires:	ghc-libmpd >= 0.8}
 BuildRequires:	ghc-mtl >= 2.0
 BuildRequires:	ghc-parsec >= 3.1
 BuildRequires:	ghc-stm >= 2.3
+%{?with_datezone:BuildRequires:	ghc-timezone-olson >= 0.1}
+%{?with_datezone:BuildRequires:	ghc-timezone-series >= 0.1}
 BuildRequires:	ghc-utf8-string
 BuildRequires:	ghc-X11 >= 1.6
+%{?with_xft:BuildRequires:	ghc-X11-xft >= 0.2}
 BuildRequires:	rpmbuild(macros) >= 1.608
 %requires_eq	ghc
 Requires:	ghc-mtl >= 2.0
@@ -48,6 +63,11 @@ runhaskell Setup.lhs configure -v2 \
 	--libdir=%{_libdir} \
 	--libexecdir=%{_libexecdir} \
 	--docdir=%{_docdir}/%{name}-%{version} \
+	%{?with_alsa:--flags="with_alsa"} \
+	%{?with_datezone:--flags="with_datezone"} \
+	%{?with_dbus:--flags="with_dbus"} \
+	%{?with_inotify:--flags="with_inotify"} \
+	%{?with_xft:--flags="with_xft"}
 
 runhaskell Setup.lhs build
 runhaskell Setup.lhs haddock --executables
