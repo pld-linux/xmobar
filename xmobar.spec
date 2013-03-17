@@ -3,6 +3,7 @@
 %bcond_without	datezone	# don't use datezone
 %bcond_without	dbus		# don't use dbus
 %bcond_without	inotify		# don't use inotify
+%bcond_without	mpd		# don't use mpd
 %bcond_without	xft		# don't use xft
 #
 Summary:	Minimalistic, text based, status bar
@@ -67,6 +68,7 @@ runhaskell Setup.lhs configure -v2 \
 	%{?with_datezone:--flags="with_datezone"} \
 	%{?with_dbus:--flags="with_dbus"} \
 	%{?with_inotify:--flags="with_inotify"} \
+	%{?with_mpd:--flags="with_mpd"} \
 	%{?with_xft:--flags="with_xft"}
 
 runhaskell Setup.lhs build
