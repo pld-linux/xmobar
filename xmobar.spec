@@ -23,6 +23,7 @@ BuildRequires:	ghc >= 6.12.3
 %{?with_mpd:BuildRequires:	ghc-libmpd >= 0.8}
 BuildRequires:	ghc-mtl >= 2.0
 BuildRequires:	ghc-parsec >= 3.1
+BuildRequires:	ghc-regex-compat
 BuildRequires:	ghc-stm >= 2.3
 %{?with_datezone:BuildRequires:	ghc-timezone-olson >= 0.1}
 %{?with_datezone:BuildRequires:	ghc-timezone-series >= 0.1}
@@ -31,12 +32,20 @@ BuildRequires:	ghc-X11 >= 1.6
 %{?with_xft:BuildRequires:	ghc-X11-xft >= 0.2}
 BuildRequires:	rpmbuild(macros) >= 1.608
 %requires_eq	ghc
+%{?with_alsa:Requires:	ghc-alsa-core >= 0.5}
+%{?with_alsa:Requires:	ghc-alsa-mixer >= 0.1}
+%{?with_dbus:Requires:	ghc-dbus >= 0.10}
+%{?with_inotify:Requires:	ghc-hinotify >= 0.3}
+%{?with_mpd:Requires:	ghc-libmpd >= 0.8}
 Requires:	ghc-mtl >= 2.0
 Requires:	ghc-parsec >= 3.1
 Requires:	ghc-regex-compat
 Requires:	ghc-stm >= 2.3
+%{?with_datezone:Requires:	ghc-timezone-olson >= 0.1}
+%{?with_datezone:Requires:	ghc-timezone-series >= 0.1}
 Requires:	ghc-utf8-string
 Requires:	ghc-X11 >= 1.6.1
+%{?with_xft:Requires:	ghc-X11-xft >= 0.2}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # debuginfo is not useful for ghc
