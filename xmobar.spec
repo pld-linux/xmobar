@@ -8,16 +8,16 @@
 #
 Summary:	Minimalistic, text based, status bar
 Name:		xmobar
-Version:	0.19
+Version:	0.20
 Release:	1
 License:	BSD
 Group:		X11/Window Managers
 Source0:	http://hackage.haskell.org/packages/archive/%{name}/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	1c5b6ac7e7afe837b79c10ae4e8b8e4d
+# Source0-md5:	09483ed2ff57b81d46aa3eb1ac6d89e4
 URL:		http://projects.haskell.org/xmobar/
 BuildRequires:	ghc >= 6.12.3
 %{?with_alsa:BuildRequires:	ghc-alsa-core >= 0.5}
-%{?with_alsa:BuildRequires:	ghc-alsa-mixer >= 0.1}
+%{?with_alsa:BuildRequires:	ghc-alsa-mixer >= 0.2}
 %{?with_dbus:BuildRequires:	ghc-dbus >= 0.10}
 %{?with_inotify:BuildRequires:	ghc-hinotify >= 0.3}
 %{?with_mpd:BuildRequires:	ghc-libmpd >= 0.8}
