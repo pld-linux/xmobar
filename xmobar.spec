@@ -8,20 +8,20 @@
 #
 Summary:	Minimalistic, text based, status bar
 Name:		xmobar
-Version:	0.21
+Version:	0.22
 Release:	1
 License:	BSD
 Group:		X11/Window Managers
 Source0:	http://hackage.haskell.org/packages/archive/%{name}/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	8d4442d3772ad9f475d96b955fda220d
+# Source0-md5:	dd92f64600830054458494e75bf90824
 URL:		http://projects.haskell.org/xmobar/
 BuildRequires:	ghc >= 6.12.3
 %{?with_alsa:BuildRequires:	ghc-alsa-core >= 0.5}
 %{?with_alsa:BuildRequires:	ghc-alsa-mixer >= 0.2}
 %{?with_dbus:BuildRequires:	ghc-dbus >= 0.10}
 %{?with_inotify:BuildRequires:	ghc-hinotify >= 0.3}
-%{?with_mpd:BuildRequires:	ghc-libmpd >= 0.8}
-BuildRequires:	ghc-mtl >= 2.0
+%{?with_mpd:BuildRequires:	ghc-libmpd >= 0.9}
+BuildRequires:	ghc-mtl >= 2.2.1
 BuildRequires:	ghc-parsec >= 3.1
 BuildRequires:	ghc-regex-compat
 BuildRequires:	ghc-stm >= 2.3
@@ -36,8 +36,8 @@ BuildRequires:	rpmbuild(macros) >= 1.608
 %{?with_alsa:Requires:	ghc-alsa-mixer >= 0.1}
 %{?with_dbus:Requires:	ghc-dbus >= 0.10}
 %{?with_inotify:Requires:	ghc-hinotify >= 0.3}
-%{?with_mpd:Requires:	ghc-libmpd >= 0.8}
-Requires:	ghc-mtl >= 2.0
+%{?with_mpd:Requires:	ghc-libmpd >= 0.9}
+Requires:	ghc-mtl >= 2.2.1
 Requires:	ghc-parsec >= 3.1
 Requires:	ghc-regex-compat
 Requires:	ghc-stm >= 2.3
