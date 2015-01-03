@@ -12,10 +12,12 @@ Version:	0.22.1
 Release:	1
 License:	BSD
 Group:		X11/Window Managers
-Source0:	http://hackage.haskell.org/packages/archive/%{name}/%{version}/%{name}-%{version}.tar.gz
+Source0:	http://hackage.haskell.org/packages/archive/xmobar/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	b63a1d5ad739e0f2b70ba0366a9854b7
 URL:		http://projects.haskell.org/xmobar/
 BuildRequires:	ghc >= 6.12.3
+BuildRequires:	ghc-X11 >= 1.6
+%{?with_xft:BuildRequires:	ghc-X11-xft >= 0.2}
 %{?with_alsa:BuildRequires:	ghc-alsa-core >= 0.5}
 %{?with_alsa:BuildRequires:	ghc-alsa-mixer >= 0.2}
 %{?with_dbus:BuildRequires:	ghc-dbus >= 0.10}
@@ -28,10 +30,10 @@ BuildRequires:	ghc-stm >= 2.3
 %{?with_datezone:BuildRequires:	ghc-timezone-olson >= 0.1}
 %{?with_datezone:BuildRequires:	ghc-timezone-series >= 0.1}
 BuildRequires:	ghc-utf8-string
-BuildRequires:	ghc-X11 >= 1.6
-%{?with_xft:BuildRequires:	ghc-X11-xft >= 0.2}
 BuildRequires:	rpmbuild(macros) >= 1.608
 %requires_eq	ghc
+Requires:	ghc-X11 >= 1.6.1
+%{?with_xft:Requires:	ghc-X11-xft >= 0.2}
 %{?with_alsa:Requires:	ghc-alsa-core >= 0.5}
 %{?with_alsa:Requires:	ghc-alsa-mixer >= 0.1}
 %{?with_dbus:Requires:	ghc-dbus >= 0.10}
@@ -44,8 +46,6 @@ Requires:	ghc-stm >= 2.3
 %{?with_datezone:Requires:	ghc-timezone-olson >= 0.1}
 %{?with_datezone:Requires:	ghc-timezone-series >= 0.1}
 Requires:	ghc-utf8-string
-Requires:	ghc-X11 >= 1.6.1
-%{?with_xft:Requires:	ghc-X11-xft >= 0.2}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # debuginfo is not useful for ghc
@@ -99,6 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc news.md readme.md samples/xmobar.config
 %attr(755,root,root) %{_bindir}/xmobar
 
 %files doc
