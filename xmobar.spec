@@ -8,18 +8,18 @@
 #
 Summary:	Minimalistic, text based, status bar
 Name:		xmobar
-Version:	0.22.1
+Version:	0.24.1
 Release:	1
 License:	BSD
 Group:		X11/Window Managers
 Source0:	http://hackage.haskell.org/packages/archive/xmobar/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	b63a1d5ad739e0f2b70ba0366a9854b7
+# Source0-md5:	d0748ee0b163572f5b9e05eb85bb969b
 URL:		http://projects.haskell.org/xmobar/
 BuildRequires:	ghc >= 6.12.3
 BuildRequires:	ghc-X11 >= 1.6
 %{?with_xft:BuildRequires:	ghc-X11-xft >= 0.2}
 %{?with_alsa:BuildRequires:	ghc-alsa-core >= 0.5}
-%{?with_alsa:BuildRequires:	ghc-alsa-mixer >= 0.2}
+%{?with_alsa:BuildRequires:	ghc-alsa-mixer >= 0.2.0.3}
 %{?with_dbus:BuildRequires:	ghc-dbus >= 0.10}
 %{?with_inotify:BuildRequires:	ghc-hinotify >= 0.3}
 %{?with_mpd:BuildRequires:	ghc-libmpd >= 0.9}
@@ -31,11 +31,12 @@ BuildRequires:	ghc-stm >= 2.3
 %{?with_datezone:BuildRequires:	ghc-timezone-series >= 0.1}
 BuildRequires:	ghc-utf8-string
 BuildRequires:	rpmbuild(macros) >= 1.608
+BuildRequires:	xorg-lib-libXpm-devel
 %requires_eq	ghc
 Requires:	ghc-X11 >= 1.6.1
 %{?with_xft:Requires:	ghc-X11-xft >= 0.2}
 %{?with_alsa:Requires:	ghc-alsa-core >= 0.5}
-%{?with_alsa:Requires:	ghc-alsa-mixer >= 0.1}
+%{?with_alsa:Requires:	ghc-alsa-mixer >= 0.2.0.3}
 %{?with_dbus:Requires:	ghc-dbus >= 0.10}
 %{?with_inotify:Requires:	ghc-hinotify >= 0.3}
 %{?with_mpd:Requires:	ghc-libmpd >= 0.9}
