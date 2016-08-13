@@ -8,12 +8,12 @@
 #
 Summary:	Minimalistic, text based, status bar
 Name:		xmobar
-Version:	0.24.1
+Version:	0.24.2
 Release:	1
 License:	BSD
 Group:		X11/Window Managers
 Source0:	http://hackage.haskell.org/packages/archive/xmobar/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	d0748ee0b163572f5b9e05eb85bb969b
+# Source0-md5:	5c8d5846af195eea5a9e8edaac909543
 URL:		http://projects.haskell.org/xmobar/
 BuildRequires:	ghc >= 6.12.3
 BuildRequires:	ghc-X11 >= 1.6
