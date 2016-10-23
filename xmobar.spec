@@ -9,7 +9,7 @@
 Summary:	Minimalistic, text based, status bar
 Name:		xmobar
 Version:	0.24.3
-Release:	1
+Release:	2
 License:	BSD
 Group:		X11/Window Managers
 Source0:	http://hackage.haskell.org/packages/archive/xmobar/%{version}/%{name}-%{version}.tar.gz
