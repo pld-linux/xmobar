@@ -32,20 +32,6 @@ BuildRequires:	ghc-stm >= 2.3
 BuildRequires:	ghc-utf8-string
 BuildRequires:	rpmbuild(macros) >= 1.608
 BuildRequires:	xorg-lib-libXpm-devel
-Requires:	ghc-X11 >= 1.6.1
-%{?with_xft:Requires:	ghc-X11-xft >= 0.2}
-%{?with_alsa:Requires:	ghc-alsa-core >= 0.5}
-%{?with_alsa:Requires:	ghc-alsa-mixer >= 0.2.0.3}
-%{?with_dbus:Requires:	ghc-dbus >= 0.10}
-%{?with_inotify:Requires:	ghc-hinotify >= 0.3}
-%{?with_mpd:Requires:	ghc-libmpd >= 0.9}
-Requires:	ghc-mtl >= 2.2.1
-Requires:	ghc-parsec >= 3.1
-Requires:	ghc-regex-compat
-Requires:	ghc-stm >= 2.3
-%{?with_datezone:Requires:	ghc-timezone-olson >= 0.1}
-%{?with_datezone:Requires:	ghc-timezone-series >= 0.1}
-Requires:	ghc-utf8-string
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # debuginfo is not useful for ghc
