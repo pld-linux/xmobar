@@ -32,7 +32,6 @@ BuildRequires:	ghc-stm >= 2.3
 BuildRequires:	ghc-utf8-string
 BuildRequires:	rpmbuild(macros) >= 1.608
 BuildRequires:	xorg-lib-libXpm-devel
-%requires_eq	ghc
 Requires:	ghc-X11 >= 1.6.1
 %{?with_xft:Requires:	ghc-X11-xft >= 0.2}
 %{?with_alsa:Requires:	ghc-alsa-core >= 0.5}
